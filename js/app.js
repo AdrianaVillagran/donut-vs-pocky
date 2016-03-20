@@ -1,33 +1,3 @@
-/*
-// wait for the DOM to finish loading
-$(document).ready(function() {
-
-
-
-
-  var turn = 1;
-  $('.box').on('click', function playTicTacToe(event){
-        if ($(this).text() !== 'X' && $(this).text() !== 'O') {
-          if (turn === 1) {
-            $(this).text('X');
-            $('#current_player').text("Let's go, O!");
-            turn = 2;
-          } else if (turn === 2) {
-            $(this).text('O');
-            $('#current_player').text("You're turn, X!");
-            turn = 1;
-            }
-        }
-      isWinner();
-  });
-
-
-
-
-
-*/
-
-
 $(document).ready(function()  {
 
   var clickCount = 0;
@@ -35,20 +5,19 @@ $(document).ready(function()  {
   var gameWinner = "";
 
   $('.box').on('click', function(event) {
-   if(  ! $(this).text() ){
-     if (clickCount % 2 === 0 ) {
-         $(this).text('X');
-         $('#current_player').text("Let's go, O!");
+     if(  ! $(this).text() ){
+       if (clickCount % 2 === 0 ) {
+           $(this).text('X');
+           $('#current_player').text("Let's go, O!");
 
-     } else if (clickCount % 2 !== 0) {
-         $(this).text('O');
-         $('#current_player').text("You're turn, X!");
+       } else if (clickCount % 2 !== 0) {
+           $(this).text('O');
+           $('#current_player').text("You're turn, X!");
 
-       }
-   clickCount++;
-   checkForWinner();
-   }
-
+         }
+     clickCount++;
+     checkForWinner();
+     }
   });
 
   $('button').on('click', function resetBoard(event) {
@@ -109,6 +78,8 @@ $(document).ready(function()  {
                   $(boxCells.eq(8)).text() === 'O') ) {
                     gameWinner = "Player 0";
                     isWinner();
+                  } else if (clickCount === 9) {
+                    alert("Game is a draw. Click reset to start again.");
                   }
   }
 
