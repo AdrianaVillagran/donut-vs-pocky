@@ -17,49 +17,50 @@
     <script src="js/app.js"></script>
 
 
-
     <title>Tic Tac Toe</title>
   </head>
   <body>
     <div class="container">
       <div class="row text-center">
-        <div class="col-md-12">
+        <div class="col-sm-12">
           <h1>Tic Tac Toe</h1>
           <hr>
         </div>
       </div>
-      <div class="row">
+      <div class="row ">
 
         <!-- a column represents our game board -->
         <!-- the `offset` class helps us center the board -->
-        <div class="col-md-6 col-md-offset-3" id="board">
+        <div class="col-sm-3">
+          <h3 id="current_player">Let's Play!</h3>
+          <button type="button" class="btn btn-lg reset">Reset</button>
+        </div>
+        <div class="col-sm-8" id="board">
 
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
+
           <div class="row">
-            <div class="col-sm-4 box" id="box0"></div>
-            <div class="col-sm-4 box" id="box1"></div>
-            <div class="col-sm-4 box" id="box2"></div>
+            <div class="col-xs-3 box"></div>
+            <div class="col-xs-3 box"></div>
+            <div class="col-xs-3 box"></div>
           </div>
           <div class="row">
-            <div class="col-sm-4 box" id="box3"></div>
-            <div class="col-sm-4 box" id="box4"></div>
-            <div class="col-sm-4 box" id="box5"></div>
+            <div class="col-xs-3 box"></div>
+            <div class="col-xs-3 box"></div>
+            <div class="col-xs-3 box"></div>
           </div>
           <div class="row">
-            <div class="col-sm-4 box" id="box6"></div>
-            <div class="col-sm-4 box" id="box7"></div>
-            <div class="col-sm-4 box" id="box8"></div>
+            <div class="col-xs-3 box"></div>
+            <div class="col-xs-3 box"></div>
+            <div class="col-xs-3 box"></div>
           </div>
 
-        </div>
-        <div>
-          <p id="current_player">Let's Play Tick Tac Toe!</p>
-          <button type="button" class="btn btn-info">Reset</button>
-        </div>
 
+
+        </div>
 
       </div>
     </div>
   </body>
-</html>
+  </html>
