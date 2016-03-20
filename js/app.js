@@ -72,9 +72,16 @@ $(document).ready(function()  {
            $(boxCells.eq(7)).text() === 'X') ||
           ($(boxCells.eq(2)).text() === 'X' &&
            $(boxCells.eq(5)).text() === 'X' &&
-           $(boxCells.eq(8)).text() === 'X')) {
+           $(boxCells.eq(8)).text() === 'X') ||
+          ($(boxCells.eq(2)).text() === 'X' &&
+           $(boxCells.eq(4)).text() === 'X' &&
+           $(boxCells.eq(6)).text() === 'X') ||
+           ($(boxCells.eq(0)).text() === 'X' &&
+            $(boxCells.eq(4)).text() === 'X' &&
+            $(boxCells.eq(8)).text() === 'X') ) {
              alert("Player X wins!");
              $('#current_player').text("");
+             window.location.reload();
            }else if(($(boxCells.eq(0)).text() === 'O' &&
                     $(boxCells.eq(1)).text() === 'O' &&
                     $(boxCells.eq(2)).text() === 'O') ||
@@ -92,11 +99,19 @@ $(document).ready(function()  {
                     $(boxCells.eq(7)).text() === 'O') ||
                    ($(boxCells.eq(2)).text() === 'O' &&
                     $(boxCells.eq(5)).text() === 'O' &&
-                    $(boxCells.eq(8)).text() === 'O')) {
+                    $(boxCells.eq(8)).text() === 'O') ||
+                   ($(boxCells.eq(2)).text() === 'O' &&
+                    $(boxCells.eq(4)).text() === 'O' &&
+                    $(boxCells.eq(6)).text() === 'O') ||
+                   ($(boxCells.eq(0)).text() === 'O' &&
+                    $(boxCells.eq(4)).text() === 'O' &&
+                    $(boxCells.eq(8)).text() === 'O') ) {
                       alert("Player O wins!");
                       $('#current_player').text("");
+                      window.location.reload();
                     }
+
   }
 
-  
+
 });
