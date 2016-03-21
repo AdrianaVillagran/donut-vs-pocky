@@ -5,13 +5,13 @@ $(document).ready(function()  {
   var gameWinner = "";
 
   $('.box').on('click', function(event) {
-     if(  ! $(this).text() ){
+     if(  ! $(this).html() ){
        if (clickCount % 2 === 0 ) {
-           $(this).text('X');
+           $(this).html('<img src="http://orig11.deviantart.net/245a/f/2010/152/7/b/7b6e09d101e65bde3c7489da02b54c83.gif">');
            $('#current_player').text("Let's go, O!");
 
        } else if (clickCount % 2 !== 0) {
-           $(this).text('O');
+           $(this).html('<img src="http://45.media.tumblr.com/c5a2487baab641bbc2d85fed16457f55/tumblr_n6ror450kc1qcf9suo1_500.gif" height="100px">');
            $('#current_player').text("You're turn, X!");
 
          }
@@ -26,57 +26,59 @@ $(document).ready(function()  {
   });
 
   function checkForWinner() {
-    if (($(boxCells.eq(0)).text() === 'X' &&
-         $(boxCells.eq(1)).text() === 'X' &&
-         $(boxCells.eq(2)).text() === 'X') ||
-        ($(boxCells.eq(3)).text() === 'X' &&
-         $(boxCells.eq(4)).text() === 'X' &&
-         $(boxCells.eq(5)).text() === 'X') ||
-        ($(boxCells.eq(6)).text() === 'X' &&
-         $(boxCells.eq(7)).text() === 'X' &&
-         $(boxCells.eq(8)).text() === 'X') ||
-        ($(boxCells.eq(0)).text() === 'X' &&
-         $(boxCells.eq(3)).text() === 'X' &&
-         $(boxCells.eq(6)).text() === 'X') ||
-        ($(boxCells.eq(1)).text() === 'X' &&
-         $(boxCells.eq(4)).text() === 'X' &&
-         $(boxCells.eq(7)).text() === 'X') ||
-        ($(boxCells.eq(2)).text() === 'X' &&
-         $(boxCells.eq(5)).text() === 'X' &&
-         $(boxCells.eq(8)).text() === 'X') ||
-        ($(boxCells.eq(2)).text() === 'X' &&
-         $(boxCells.eq(4)).text() === 'X' &&
-         $(boxCells.eq(6)).text() === 'X') ||
-         ($(boxCells.eq(0)).text() === 'X' &&
-          $(boxCells.eq(4)).text() === 'X' &&
-          $(boxCells.eq(8)).text() === 'X') ) {
-           gameWinner = "Player X";
+    var pocky = '<img src="http://orig11.deviantart.net/245a/f/2010/152/7/b/7b6e09d101e65bde3c7489da02b54c83.gif">';
+    var donut = '<img src="http://45.media.tumblr.com/c5a2487baab641bbc2d85fed16457f55/tumblr_n6ror450kc1qcf9suo1_500.gif" height="100px">';
+    if (($(boxCells.eq(0)).html() === pocky &&
+         $(boxCells.eq(1)).html() === pocky &&
+         $(boxCells.eq(2)).html() === pocky) ||
+        ($(boxCells.eq(3)).html() === pocky &&
+         $(boxCells.eq(4)).html() === pocky &&
+         $(boxCells.eq(5)).html() === pocky) ||
+        ($(boxCells.eq(6)).html() === pocky &&
+         $(boxCells.eq(7)).html() === pocky &&
+         $(boxCells.eq(8)).html() === pocky) ||
+        ($(boxCells.eq(0)).html() === pocky &&
+         $(boxCells.eq(3)).html() === pocky &&
+         $(boxCells.eq(6)).html() === pocky) ||
+        ($(boxCells.eq(1)).html() === pocky &&
+         $(boxCells.eq(4)).html() === pocky &&
+         $(boxCells.eq(7)).html() === pocky) ||
+        ($(boxCells.eq(2)).html() === pocky &&
+         $(boxCells.eq(5)).html() === pocky &&
+         $(boxCells.eq(8)).html() === pocky) ||
+        ($(boxCells.eq(2)).html() === pocky &&
+         $(boxCells.eq(4)).html() === pocky &&
+         $(boxCells.eq(6)).html() === pocky) ||
+         ($(boxCells.eq(0)).html() === pocky &&
+          $(boxCells.eq(4)).html() === pocky &&
+          $(boxCells.eq(8)).html() === pocky) ) {
+           gameWinner = "Pocky!";
            isWinner();
-         }else if(($(boxCells.eq(0)).text() === 'O' &&
-                  $(boxCells.eq(1)).text() === 'O' &&
-                  $(boxCells.eq(2)).text() === 'O') ||
-                 ($(boxCells.eq(3)).text() === 'O' &&
-                  $(boxCells.eq(4)).text() === 'O' &&
-                  $(boxCells.eq(5)).text() === 'O') ||
-                 ($(boxCells.eq(6)).text() === 'O' &&
-                  $(boxCells.eq(7)).text() === 'O' &&
-                  $(boxCells.eq(8)).text() === 'O') ||
-                 ($(boxCells.eq(0)).text() === 'O' &&
-                  $(boxCells.eq(3)).text() === 'O' &&
-                  $(boxCells.eq(6)).text() === 'O') ||
-                 ($(boxCells.eq(1)).text() === 'O' &&
-                  $(boxCells.eq(4)).text() === 'O' &&
-                  $(boxCells.eq(7)).text() === 'O') ||
-                 ($(boxCells.eq(2)).text() === 'O' &&
-                  $(boxCells.eq(5)).text() === 'O' &&
-                  $(boxCells.eq(8)).text() === 'O') ||
-                 ($(boxCells.eq(2)).text() === 'O' &&
-                  $(boxCells.eq(4)).text() === 'O' &&
-                  $(boxCells.eq(6)).text() === 'O') ||
-                 ($(boxCells.eq(0)).text() === 'O' &&
-                  $(boxCells.eq(4)).text() === 'O' &&
-                  $(boxCells.eq(8)).text() === 'O') ) {
-                    gameWinner = "Player 0";
+         }else if(($(boxCells.eq(0)).html() === donut &&
+                  $(boxCells.eq(1)).html() === donut &&
+                  $(boxCells.eq(2)).html() === donut) ||
+                 ($(boxCells.eq(3)).html() === donut &&
+                  $(boxCells.eq(4)).html() === donut &&
+                  $(boxCells.eq(5)).html() === donut) ||
+                 ($(boxCells.eq(6)).html() === donut &&
+                  $(boxCells.eq(7)).html() === donut &&
+                  $(boxCells.eq(8)).html() === donut) ||
+                 ($(boxCells.eq(0)).html() === donut &&
+                  $(boxCells.eq(3)).html() === donut &&
+                  $(boxCells.eq(6)).html() === donut) ||
+                 ($(boxCells.eq(1)).html() === donut &&
+                  $(boxCells.eq(4)).html() === donut &&
+                  $(boxCells.eq(7)).html() === donut) ||
+                 ($(boxCells.eq(2)).html() === donut &&
+                  $(boxCells.eq(5)).html() === donut &&
+                  $(boxCells.eq(8)).html() === donut) ||
+                 ($(boxCells.eq(2)).html() === donut &&
+                  $(boxCells.eq(4)).html() === donut &&
+                  $(boxCells.eq(6)).html() === donut) ||
+                 ($(boxCells.eq(0)).html() === donut &&
+                  $(boxCells.eq(4)).html() === donut &&
+                  $(boxCells.eq(8)).html() === donut) ) {
+                    gameWinner = "donuts!";
                     isWinner();
                   } else if (clickCount === 9) {
                     alert("Game is a draw. Click reset to start again.");
@@ -84,7 +86,7 @@ $(document).ready(function()  {
   }
 
   function isWinner() {
-      alert(gameWinner + " wins!");
+      alert("You won! Now go eat some " + gameWinner);
       $('#current_player').text("");
       window.location.reload();
   }
