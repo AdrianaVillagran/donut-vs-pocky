@@ -8,11 +8,11 @@ $(document).ready(function()  {
      if(  ! $(this).html() ){
        if (clickCount % 2 === 0 ) {
            $(this).html('<img src="http://orig11.deviantart.net/245a/f/2010/152/7/b/7b6e09d101e65bde3c7489da02b54c83.gif">');
-           $('#current_player').text("Let's go, O!");
+           $('#current_player').text("go donut!");
 
        } else if (clickCount % 2 !== 0) {
            $(this).html('<img src="http://45.media.tumblr.com/c5a2487baab641bbc2d85fed16457f55/tumblr_n6ror450kc1qcf9suo1_500.gif" height="100px">');
-           $('#current_player').text("You're turn, X!");
+           $('#current_player').text("go pocky!");
 
          }
      clickCount++;

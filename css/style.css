@@ -2,9 +2,21 @@
   margin-top: 10px;
 }
 
+#current_player {
+  margin-top: 30px;
+  font-family: 'Advent Pro', sans-serif;
+  font-size: 30px;
+  color: #6B616B;
+}
+
+.title {
+  font-family: 'Press Start 2P', cursive;
+  color: #F003FC;
+}
+
 
 .box {
-  border: 2px solid black;
+  border: 2px solid lightgrey;
   border-radius: 20px;
   height: 120px;
   /*width: 120px;*/
@@ -21,4 +33,12 @@
 
 .reset {
   margin-top: 20px;
+  background-color: lightblue;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.reset:hover {
+  background-color: orange;
+  color: white;
 }
