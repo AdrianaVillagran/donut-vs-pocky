@@ -52,8 +52,8 @@ $(document).ready(function()  {
          ($(boxCells.eq(0)).html() === pocky &&
           $(boxCells.eq(4)).html() === pocky &&
           $(boxCells.eq(8)).html() === pocky) ) {
-           gameWinner = "Pocky!";
-           isWinner();
+           $('#board').html('<img src="https://media.giphy.com/media/3xz2BJFDG9yRxvmAta/giphy.gif" height="480px">');
+           $('#current_player').text("Pocky kills");
          }else if(($(boxCells.eq(0)).html() === donut &&
                   $(boxCells.eq(1)).html() === donut &&
                   $(boxCells.eq(2)).html() === donut) ||
@@ -78,17 +78,11 @@ $(document).ready(function()  {
                  ($(boxCells.eq(0)).html() === donut &&
                   $(boxCells.eq(4)).html() === donut &&
                   $(boxCells.eq(8)).html() === donut) ) {
-                    gameWinner = "donuts!";
-                    isWinner();
+                    $('#board').html('<img src="https://media.giphy.com/media/COZk7m43C4sQo/giphy.gif">');
+                    $('#current_player').text("So you like donuts, eh?");
                   } else if (clickCount === 9) {
                     alert("Game is a draw. Click reset to start again.");
                   }
-  }
-
-  function isWinner() {
-      alert("You won! Now go eat some " + gameWinner);
-      $('#current_player').text("");
-      window.location.reload();
   }
 
 
