@@ -78,13 +78,12 @@ $(document).ready(function()  {
                  ($(boxCells.eq(0)).html() === donut &&
                   $(boxCells.eq(4)).html() === donut &&
                   $(boxCells.eq(8)).html() === donut) ) {
-                    $('#board').html('<img src="https://media.giphy.com/media/COZk7m43C4sQo/giphy.gif">');
+                    $('#board').html('<img src="https://media.giphy.com/media/COZk7m43C4sQo/giphy.gif" height="450px">');
                     $('#current_player').text("So you like donuts, eh?");
                   } else if (clickCount === 9) {
                     alert("This game is a draw. Click reset to start again.");
                   }
   }
-
 
 
 });
